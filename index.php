@@ -10,7 +10,7 @@ $database = "notes";
 $conn = mysqli_connect($server, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-  # code...
+  
 }
 if(isset($_GET['delete'])){
   
@@ -173,22 +173,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <script>
   
-  edit = document.querySelectorAll('.btn-info');
+  
   deletee = document.querySelectorAll('.btn-danger');
  
-  edit.forEach(function(e){
-    e.addEventListener('click',   function(){
-      
-      title = e.parentElement.parentElement.querySelector('.card-title').innerText;
-      description = e.parentElement.parentElement.querySelector('.card-text').innerText;
-      console.log(title);
-      console.log(description);
-      document.querySelector('#titleedit').value = title;
-      document.querySelector('#descriptionedit').value = description;
-      document.querySelector('#exampleModal').style.display = 'block';
-  ;
-    })
-  })
+  
   deletee.forEach(function(e){
     e.addEventListener('click', function(){
       console.log('delete');
